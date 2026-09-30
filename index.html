@@ -1,23 +1,51 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Realistic Animated Dragon AR</title>
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
   <style>
-    body { margin: 0; background: #000; }
-    model-viewer { width: 100vw; height: 100vh; }
+    body {
+      margin: 0;
+      background-color: #000;
+      overflow: hidden;
+    }
+    model-viewer {
+      width: 100vw;
+      height: 100vh;
+    }
+    .ar-btn {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 14px 28px;
+      background: linear-gradient(135deg, #ff4500, #ff0000);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 16px;
+      box-shadow: 0 4px 15px rgba(255, 69, 0, 0.5);
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
 
   <model-viewer 
-    src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/DragonAttenuation/glTF-Binary/DragonAttenuation.glb" 
+    src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/DragonAttenuation/glTF-Binary/DragonAttenuation.glb" 
+    alt="3D Dragon Model"
     ar 
     ar-modes="webxr scene-viewer quick-look" 
     camera-controls 
     autoplay 
-    shadow-intensity="1">
+    animation-name="*"
+    shadow-intensity="1.5">
     
-    <button slot="ar-button" style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); padding: 12px 24px; background: #ff4500; color: white; border: none; border-radius: 8px; font-weight: bold; font-size: 16px;">
+    <button slot="ar-button" class="ar-btn">
       Spawn Dragon in Room 🔥
     </button>
 
